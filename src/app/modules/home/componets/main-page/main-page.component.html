@@ -1,0 +1,60 @@
+<form [formGroup]="saveCustomer">
+  <div class="form-group">
+    <label for="exampleFormControlInput2">id</label>
+    <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="id" formControlName="id">
+    <label for="exampleFormControlInput3">name </label>
+    <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="name"  formControlName="name">
+    <label for="exampleFormControlInput4"> address</label>
+    <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="address"  formControlName="address">
+    <label for="exampleFormControlInput5">salary</label>
+    <input type="number" class="form-control" id="exampleFormControlInput5" placeholder="salary"  formControlName="salary">
+  </div>
+  <br>
+  <button type="button" class="btn btn-outline-primary" (click)="submitData()">save</button>
+</form>
+
+<form [formGroup]="updateCustomer" >
+  <div class="form-group">
+    <input type="text" class="form-control"  placeholder="id">
+    <input type="text" class="form-control" placeholder="name">
+    <input type="text" class="form-control" placeholder="address">
+    <input type="number" class="form-control" placeholder="salary">
+  </div>
+  <br>
+  <button type="button" class="btn btn-outline-secondary"(click)="updateData()">update</button>
+
+</form>
+
+<form [formGroup]="deleteCustomer">
+  <div class="form-group">
+    <input type="email" class="form-control"  placeholder="id">
+
+  </div>
+  <br>
+  <button type="button" class="btn btn-outline-danger" (click)="deleteData()">delete</button>
+</form>
+
+<form >
+  <div class="form-group">
+    <input type="text" class="form-control"  placeholder="id">
+  </div>
+</form>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">Name</th>
+    <th scope="col">Address</th>
+    <th scope="col">Salary</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of allCustomer">
+    <th>{{customer.id}}</th>
+    <td>{{customer.name}}</td>
+    <td>{{customer.address}}</td>
+    <td>{{customer.salary}}</td>
+  </tr>
+  </tbody>
+</table>
